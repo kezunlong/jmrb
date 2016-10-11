@@ -9,10 +9,10 @@
 		<version>0.0.1-SNAPSHOT</version>
 	</parent>
 	<groupId>com.ingersollrand</groupId>
-	<artifactId>jmrb-webapp</artifactId>
+	<artifactId>mrb-webapp</artifactId>
 	<version>0.0.1-SNAPSHOT</version>
 	<packaging>war</packaging>
-	<name>jmrb-webapp Maven Webapp</name>
+	<name>mrb-webapp Maven Webapp</name>
 	<url>http://maven.apache.org</url>
 	<dependencies>
 		<dependency>
@@ -29,12 +29,18 @@
 		</dependency>
 		<dependency>
 			<groupId>com.ingersollrand</groupId>
-			<artifactId>jmrb-db</artifactId>
+			<artifactId>mrb-model</artifactId>
+			<version>0.0.1-SNAPSHOT</version>
+			<scope>compile</scope>
+		</dependency>
+		<dependency>
+			<groupId>com.ingersollrand</groupId>
+			<artifactId>mrb-db</artifactId>
 			<version>0.0.1-SNAPSHOT</version>
 			<scope>compile</scope>
 		</dependency>
 	</dependencies>
 	<build>
-		<finalName>jmrb-webapp</finalName>
+		<finalName>mrb-webapp</finalName>
 	</build>
 </project>
