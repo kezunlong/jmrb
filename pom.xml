@@ -7,9 +7,10 @@
 	<packaging>pom</packaging>
 	<modules>
 		<module>ir-utilities</module>
-		<module>mrb-db</module>
-		<module>mrb-webapp</module>
 		<module>mrb-model</module>
+		<module>mrb-db</module>
+		<module>mrb-service</module>
+		<module>mrb-webapp</module>
 	</modules>
 	<dependencies>
 		<dependency>

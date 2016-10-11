@@ -12,6 +12,7 @@ import ir.utilities.db.PagingOption;
 import mrb.db.MeetingRoomRepository;
 import mrb.model.meetingroom.MeetingRoom;
 import mrb.model.meetingroom.MeetingRoomFilter;
+import mrb.model.meetingroom.MeetingRoomStatus;
 
 
 public class MeetingRoomJdbcRepository extends JdbcBaseRepository implements MeetingRoomRepository {
@@ -27,12 +28,10 @@ public class MeetingRoomJdbcRepository extends JdbcBaseRepository implements Mee
 		super(repository);
 	}
 
-	@Override
 	public List<MeetingRoom> findAll() {
 		return jdbcTemplate.query(SELECT_MEETINGROOM, new MeetingRoomRowMapper());
 	}
 
-	@Override
 	public List<MeetingRoom> filter(MeetingRoomFilter filter, PagingOption option) {
 		String sql = SELECT_MEETINGROOM + " WHERE 1 = 1" + filter.getFilterString(); 
 		logger.info(sql);
@@ -43,13 +42,11 @@ public class MeetingRoomJdbcRepository extends JdbcBaseRepository implements Mee
 		return getPagingData(sql, option, new MeetingRoomRowMapper());
 	}
 
-	@Override
 	public MeetingRoom findById(int id) {
 		String sql = SELECT_MEETINGROOM + " WHERE ID = ?";
 		return jdbcTemplate.queryForObject(sql, new MeetingRoomRowMapper(), id);
 	}
 
-	@Override
 	public void insert(MeetingRoom item) {
 		int id = jdbcTemplate.queryForObject(SELECT_MEETINGROOM_NEWID, Integer.class);
 		item.setId(id);
@@ -65,7 +62,6 @@ public class MeetingRoomJdbcRepository extends JdbcBaseRepository implements Mee
 				item.getStatus().toString());
 	}
 
-	@Override
 	public void update(MeetingRoom item) {
 		jdbcTemplate.update(UPDATE_MEETINGROOM,
 				item.getName(),
@@ -78,7 +74,6 @@ public class MeetingRoomJdbcRepository extends JdbcBaseRepository implements Mee
 				item.getId());
 	}
 
-	@Override
 	public void delete(int id) {
 		jdbcTemplate.update(DELETE_MEETINGROOM, id);
 	}

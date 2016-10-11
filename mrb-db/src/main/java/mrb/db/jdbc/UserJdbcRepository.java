@@ -27,12 +27,10 @@ public class UserJdbcRepository extends JdbcBaseRepository implements UserReposi
 		super(repository);
 	}
 
-	@Override
 	public List<User> findAll() {
 		return jdbcTemplate.query(SELECT_USER, new UserRowMapper());
 	}
 
-	@Override
 	public List<User> filter(UserFilter filter, PagingOption option) {
 		String sql = SELECT_USER + " WHERE 1 = 1" + filter.getFilterString(); 
 		logger.info(sql);
@@ -43,13 +41,11 @@ public class UserJdbcRepository extends JdbcBaseRepository implements UserReposi
 		return getPagingData(sql, option, new UserRowMapper());
 	}
 
-	@Override
 	public User findById(int id) {
 		String sql = SELECT_USER + " WHERE ID = ?";
 		return jdbcTemplate.queryForObject(sql, new UserRowMapper(), id);
 	}
 
-	@Override
 	public void insert(User item) {
 		int id = jdbcTemplate.queryForObject(SELECT_USER_NEWID, Integer.class);
 		item.setId(id);
@@ -68,7 +64,6 @@ public class UserJdbcRepository extends JdbcBaseRepository implements UserReposi
 				item.getStatus());
 	}
 
-	@Override
 	public void update(User item) {
 		jdbcTemplate.update(UPDATE_USER,
 				item.getUserName(),
@@ -84,7 +79,6 @@ public class UserJdbcRepository extends JdbcBaseRepository implements UserReposi
 				item.getId());
 	}
 
-	@Override
 	public void delete(int id) {
 		jdbcTemplate.update(DELETE_USER, id);
 	}

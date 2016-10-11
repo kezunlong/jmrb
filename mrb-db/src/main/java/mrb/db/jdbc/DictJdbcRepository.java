@@ -21,12 +21,10 @@ public class DictJdbcRepository extends JdbcBaseRepository implements DictReposi
 		super(repository);
 	}
 
-	@Override
 	public List<Dict> findAll() {
 		return jdbcTemplate.query(SELECT_DICT, new DictRowMapper());
 	}
 
-	@Override
 	public List<Dict> filter(DictFilter filter, PagingOption option) {
 		String sql = SELECT_DICT + " WHERE 1 = 1" + filter.getFilterString(); 
 		if(option.getFetchRecordCount()) {
@@ -36,19 +34,16 @@ public class DictJdbcRepository extends JdbcBaseRepository implements DictReposi
 		return getPagingData(sql, option, new DictRowMapper());
 	}
 	
-	@Override
 	public List<Dict> findByCategory(String category) {
 		String sql = SELECT_DICT + " WHERE CATEGORY = ? ORDER BY ORDERNUMBER";
 		return jdbcTemplate.query(sql, new DictRowMapper(), category);
 	}
 
-	@Override
 	public Dict findById(String id) {
 		String sql = SELECT_DICT + " WHERE ID = ?";
 		return jdbcTemplate.queryForObject(sql, new DictRowMapper(), id);
 	}
 
-	@Override
 	public void insert(Dict item) {
 		jdbcTemplate.update(INSERT_DICT,
 				item.getId(),
@@ -58,7 +53,6 @@ public class DictJdbcRepository extends JdbcBaseRepository implements DictReposi
 				item.getOrderNumber());
 	}
 
-	@Override
 	public void update(Dict item) {
 		jdbcTemplate.update(UPDATE_DICT,
 				item.getCategory(),
@@ -68,7 +62,6 @@ public class DictJdbcRepository extends JdbcBaseRepository implements DictReposi
 				item.getId());
 	}
 
-	@Override
 	public void delete(String id) {
 		jdbcTemplate.update(DELETE_DICT, id);
 	}
