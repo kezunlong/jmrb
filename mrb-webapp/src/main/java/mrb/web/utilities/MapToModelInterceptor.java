@@ -27,7 +27,9 @@ public class MapToModelInterceptor extends HandlerInterceptorAdapter {
     public void postHandle(HttpServletRequest request,
             HttpServletResponse response, Object handler,
             ModelAndView modelAndView) throws Exception {
-         modelAndView.addObject("actionURL", request.getRequestURI());
+    	if(request != null && modelAndView != null) {
+    		modelAndView.addObject("actionURL", request.getRequestURI());
+    	}
     }
 
     @Override
