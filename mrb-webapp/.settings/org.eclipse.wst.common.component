@@ -16,9 +16,6 @@
         <dependent-module archiveName="mrb-service-0.0.1-SNAPSHOT.jar" deploy-path="/WEB-INF/lib" handle="module:/resource/mrb-service/mrb-service">
             <dependency-type>uses</dependency-type>
         </dependent-module>
-        <dependent-module archiveName="commons-lang3-3.4.jar" deploy-path="/WEB-INF/lib" handle="module:/resource/commons-lang3-3.4-src/commons-lang3-3.4-src">
-            <dependency-type>uses</dependency-type>
-        </dependent-module>
         <property name="java-output-path" value="/jmrb-webapp/target/classes"/>
         <property name="context-root" value="mrb-webapp"/>
     </wb-module>
