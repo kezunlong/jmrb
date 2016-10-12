@@ -36,7 +36,7 @@ public class MvcPaging extends SimpleTagSupport {
     }
     
     public void doTag() throws JspException, IOException {
-    	if(pagingOption == null || pagingOption.getTotalPages() <= 0) {
+    	if(pagingOption == null || pagingOption.getTotalPages() <= 1) {
     		return;
     	}
     	
