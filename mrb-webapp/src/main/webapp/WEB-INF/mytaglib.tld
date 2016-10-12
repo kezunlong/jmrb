@@ -1,0 +1,42 @@
+<?xml version="1.0" encoding="ISO-8859-1" ?>
+<!DOCTYPE taglib
+        PUBLIC "-//Sun Microsystems, Inc.//DTD JSP Tag Library 1.2//EN"
+        "http://java.sun.com/j2ee/dtd/web-jsptaglibrary_1_2.dtd">
+
+<taglib>
+
+  <tlib-version>1.0</tlib-version>
+  <jsp-version>1.2</jsp-version>
+  <short-name>my</short-name>
+  <uri>mytaglib</uri>
+  <description>
+    my tag library
+  </description>
+
+  <tag>
+    <name>MvcPaging</name>
+    <tag-class>mrb.tags.pagination.MvcPaging</tag-class>
+    <body-content>empty</body-content>
+    <description>Pagination</description>
+    <attribute>
+       <name>pagingOption</name>
+       <required>true</required>
+       <rtexprvalue>true</rtexprvalue>
+       <type>ir.utilities.db.PagingOption</type>
+    </attribute>
+    <attribute>
+       <name>pagingUIOption</name>
+       <required>true</required>
+       <rtexprvalue>true</rtexprvalue>
+       <type>mrb.tags.pagination.PagingUIOption</type>
+    </attribute>
+    <attribute>
+       <name>pageUrl</name>
+       <required>true</required>
+       <rtexprvalue>true</rtexprvalue>
+       <type>String</type>
+       <!-- <type>java.util.function.Function</type> -->
+    </attribute>
+  </tag>
+
+</taglib>

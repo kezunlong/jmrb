@@ -1,0 +1,7 @@
+<sitemesh>
+	<content-processor>
+		<tag-rule-bundle class="org.sitemesh.content.tagrules.html.Sm2TagRuleBundle" />
+	</content-processor>
+	<mapping path="/*" decorator="/WEB-INF/jsp/layout/_layout.jsp" />
+	<mapping path="/*Partial_*" exclue="true"/>
+</sitemesh>

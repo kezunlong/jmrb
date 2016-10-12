@@ -1,0 +1,62 @@
+@CHARSET "UTF-8";
+
+/* Override the default bootstrap behavior where horizontal description lists 
+   will truncate terms that are too long to fit in the left column 
+*/
+body {
+    font-family: Arial, "Open Sans", "宋体";
+}
+
+.dl-horizontal dt {
+    white-space: normal;
+}
+
+/* Set width on the form input elements since they're 100% wide by default */
+input,
+select {
+    max-width: 280px;
+}
+
+textarea {
+    max-width: 500px;
+}
+
+.query-form input, .query-form select {
+    margin-right: 10px;
+}
+
+.multiline-query-form .form-group {
+    padding:5px;
+}
+
+.multiline-query-form .form-group .form-label {
+    min-width: 60px;
+}
+
+input[data-val-required], select[data-val-required], input.required, select.required {
+    border-left:2px solid red !important; /*#438eb9*/
+}
+
+ul.pagination {
+    margin-top:0;
+    margin-bottom:0;
+    margin-right:1px;
+}
+
+.dl-horizontal dt, .dl-horizontal dd {
+    line-height: 25px;
+}
+
+.validation-summary-errors {
+    color:red;
+}
+
+.table-item-link {
+    margin-right: 10px !important;
+}
+
+table.formquery { border-collapse: collapse; border-spacing: 0; margin: 0; }
+table.formquery td { padding: 3px 5px; text-align:left; vertical-align:middle; }
+table.formquery th { padding: 3px 0 3px 5px; text-align:left; }
+table.formquery td label { margin-bottom: 0;}
+
