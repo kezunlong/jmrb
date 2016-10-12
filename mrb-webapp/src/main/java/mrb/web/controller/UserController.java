@@ -20,7 +20,7 @@ import org.springframework.web.bind.annotation.RequestMethod;
 import ir.utilities.db.PagingOption;
 import mrb.model.auth.*;
 import mrb.model.basedata.*;
-import mrb.web.service.MRBService;
+import mrb.service.MRBService;
 
 @Controller()
 @RequestMapping("/User")

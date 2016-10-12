@@ -15,7 +15,7 @@
 	<dependencies>
 		<dependency>
 			<groupId>com.ingersollrand</groupId>
-			<artifactId>mrb-db</artifactId>
+			<artifactId>mrb-service</artifactId>
 			<version>0.0.1-SNAPSHOT</version>
 			<scope>compile</scope>
 		</dependency>
