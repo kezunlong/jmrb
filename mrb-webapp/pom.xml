@@ -15,7 +15,7 @@
 	<dependencies>
 		<dependency>
 			<groupId>com.ingersollrand</groupId>
-			<artifactId>mrb-service</artifactId>
+			<artifactId>mrb-db</artifactId>
 			<version>0.0.1-SNAPSHOT</version>
 			<scope>compile</scope>
 		</dependency>
@@ -92,6 +92,11 @@
 			<groupId>org.sitemesh</groupId>
 			<artifactId>sitemesh</artifactId>
 			<version>3.0.1</version>
+		</dependency>
+		<dependency>
+			<groupId>com.oracle</groupId>
+			<artifactId>ojdbc7</artifactId>
+			<version>12.1.0.2</version>
 		</dependency>
 	</dependencies>
 	<build>

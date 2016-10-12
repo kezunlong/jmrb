@@ -18,7 +18,7 @@ http://www.springframework.org/schema/jee/spring-jee.xsd">
 	<mvc:resources mapping="/*.html" location="/" />
 	
 	<context:component-scan base-package="mrb.web.controller" />
-	<context:component-scan base-package="mrb.service" />
+	<context:component-scan base-package="mrb.web.service" />
 	
 <!-- 	<bean id="mrbService" class="mrb.service.MRBService"> -->
 <!-- 		<constructor-arg ref="jdbcTemplate" /> -->

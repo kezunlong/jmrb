@@ -20,7 +20,7 @@ import org.springframework.web.bind.annotation.RequestMethod;
 import ir.utilities.db.PagingOption;
 import mrb.model.basedata.*;
 import mrb.model.meetingroom.*;
-import mrb.service.MRBService;
+import mrb.web.service.MRBService;
 
 @Controller()
 @RequestMapping("/MeetingRoom")
