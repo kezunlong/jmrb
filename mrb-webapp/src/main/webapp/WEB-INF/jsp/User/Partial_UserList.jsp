@@ -26,8 +26,26 @@
                 <td>${user.email}</td>
                 <td>${user.telephone}</td>
                 <td>${user.mobile}</td>
-                <td>${user.sector}</td>
-                <td>${user.office}</td>
+                <td>
+                	<c:choose>
+                		<c:when test="${locale == 'zh_CN'}">
+                			${user.sector.valueCN}
+                		</c:when>
+                		<c:otherwise>
+                			${user.sector.value}
+                		</c:otherwise>
+                	</c:choose>
+                </td>
+                <td>
+                	<c:choose>
+                		<c:when test="${locale == 'zh_CN' }">
+                			${user.office.valueCN}
+                		</c:when>
+                		<c:otherwise>
+                			${user.office.value}
+                		</c:otherwise>
+                	</c:choose>
+                </td>
                 <td><input type="checkbox" <c:if test="${user.status}">checked</c:if> disabled="disabled" /></td>
                 <td>
                     <a href="<c:url value="/User/Edit/${user.id}"></c:url>" class="table-item-link" title="Edit">
