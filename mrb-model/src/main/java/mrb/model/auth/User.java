@@ -1,16 +1,23 @@
 package mrb.model.auth;
 
+import org.hibernate.validator.constraints.NotEmpty;
+
 import mrb.model.basedata.Dict;
 
 public class User {
 	private int id;
+	@NotEmpty
 	private String userName;
+	@NotEmpty
 	private String englishName;
 	private String chineseName;
+	@NotEmpty
 	private String email;
 	private String telephone;
 	private String mobile;
+	@NotEmpty
 	private String sectorId;
+	@NotEmpty
 	private String officeId;
 	private String address;
 	private boolean status;

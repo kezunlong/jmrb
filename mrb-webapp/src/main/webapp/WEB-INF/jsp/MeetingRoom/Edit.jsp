@@ -34,19 +34,19 @@
 			<div class="form-group">
 	            <form:label path="name" cssClass="col-md-2 control-label">Name</form:label>
 	            <div class="col-md-10">
-	            	<form:input path="name" cssClass="form-control" cssErrorClass="error"/>
+	            	<form:input path="name" cssClass="form-control required" cssErrorClass="error"/>
 	            </div>
 	        </div>
 	        <div class="form-group">
 	            <form:label path="nameCN" cssClass="col-md-2 control-label">NameCN</form:label>
 	            <div class="col-md-10">
-	            	<form:input path="nameCN" cssClass="form-control" cssErrorClass="error"/>
+	            	<form:input path="nameCN" cssClass="form-control required" cssErrorClass="error"/>
 	            </div>
 	        </div>
 	        <div class="form-group">
 	            <form:label path="officeId" cssClass="col-md-2 control-label">Office</form:label>
 	            <div class="col-md-10">
-	            	<form:select path="officeId">
+	            	<form:select path="officeId" cssClass="required" cssErrorClass="error">
 						<option value=""></option>
 						<form:options items="${offices}" itemLabel="value" itemValue="id" />
 					</form:select>

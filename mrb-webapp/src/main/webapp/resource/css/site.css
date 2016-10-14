@@ -34,6 +34,10 @@ textarea {
 }
 
 input[data-val-required], select[data-val-required], input.required, select.required {
+    border-left:2px solid #438eb9 !important; /*#438eb9*/
+}
+
+input.error, select.error {
     border-left:2px solid red !important; /*#438eb9*/
 }
 

@@ -34,13 +34,13 @@
 			<div class="form-group">
 	            <form:label path="userName" cssClass="col-md-2 control-label"><spring:message code="user.userName"/></form:label>
 	            <div class="col-md-10">
-	            	<form:input path="userName" cssClass="form-control" cssErrorClass="error"/>
+	            	<form:input path="userName" cssClass="form-control required" cssErrorClass="error"/>
 	            </div>
 	        </div>
 	        <div class="form-group">
 	            <form:label path="englishName" cssClass="col-md-2 control-label"><spring:message code="user.englishName"/></form:label>
 	            <div class="col-md-10">
-	            	<form:input path="englishName" cssClass="form-control" cssErrorClass="error"/>
+	            	<form:input path="englishName" cssClass="form-control required" cssErrorClass="error"/>
 	            </div>
 	        </div>
 	        <div class="form-group">
@@ -52,7 +52,7 @@
 	        <div class="form-group">
 	            <form:label path="email" cssClass="col-md-2 control-label"><spring:message code="user.email"/></form:label>
 	            <div class="col-md-10">
-	            	<form:input path="email" cssClass="form-control" cssErrorClass="error"/>
+	            	<form:input path="email" cssClass="form-control required" cssErrorClass="error"/>
 	            </div>
 	        </div>
 	        <div class="form-group">
@@ -70,7 +70,7 @@
 	        <div class="form-group">
 	            <form:label path="sectorId" cssClass="col-md-2 control-label"><spring:message code="user.sector"/></form:label>
 	            <div class="col-md-10">
-	            	<form:select path="sectorId">
+	            	<form:select path="sectorId" cssClass="required" cssErrorClass="error">
 						<option value=""></option>
 						<form:options items="${sectors}" itemLabel="value" itemValue="id" />
 					</form:select>
@@ -79,7 +79,7 @@
 	        <div class="form-group">
 	            <form:label path="officeId" cssClass="col-md-2 control-label"><spring:message code="user.office"/></form:label>
 	            <div class="col-md-10">
-	            	<form:select path="officeId">
+	            	<form:select path="officeId" cssClass="required" cssErrorClass="error">
 						<option value=""></option>
 						<form:options items="${offices}" itemLabel="value" itemValue="id" />
 					</form:select>
