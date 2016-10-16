@@ -52,13 +52,14 @@
 						<div class="position-relative">
 							<c:url value="/Login" var="formAction"/>
 							<form:form commandName="userLogin" action="${formAction}" method="post">
+								<form:errors path="*" element="div" cssClass="validation-summary-errors" />
 								<div id="login-box"
 									class="login-box visible widget-box no-border">
 									<div class="widget-body">
 										<div class="widget-main">
 											<h4 class="header blue lighter bigger"><spring:message code="login.title" /></h4>
 											<div class="space-6"></div>
-											<form:errors path="*" element="div" cssClass="validation-summary-errors" />
+											
 											<fieldset>
 												<label class="block clearfix"> 
 													<span class="block input-icon input-icon-right">
@@ -97,7 +98,7 @@
 	
 										<div class="toolbar clearfix">
 											<div>
-												<a href='@Url.Action("ForgotPassword", "Account", null)'
+												<a href='<c:url value="/Account/ForgotPassword"/>'
 													class="forgot-password-link"> <i
 													class="ace-icon fa fa-arrow-left"></i>
 													<spring:message code="login.forgotPassword"/>

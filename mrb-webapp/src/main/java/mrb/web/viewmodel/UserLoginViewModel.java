@@ -1,5 +1,7 @@
 package mrb.web.viewmodel;
 
+import org.hibernate.validator.constraints.NotEmpty;
+
 public class UserLoginViewModel {
 	public String getUserName() {
 		return userName;
@@ -19,8 +21,12 @@ public class UserLoginViewModel {
 	public void setRememberMe(Boolean rememberMe) {
 		this.rememberMe = rememberMe;
 	}
+	
+	@NotEmpty
 	private String userName;
+	@NotEmpty
 	private String password;
+	
 	private Boolean rememberMe;
 	
 }
