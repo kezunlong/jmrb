@@ -13,6 +13,8 @@ public interface UserRepository {
 	
 	User findById(int id);
 	
+	User findByUserName(String userName);
+	
 	void insert(User item);
 	
 	void update(User item);

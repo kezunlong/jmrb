@@ -4,4 +4,5 @@
 	</content-processor>
 	<mapping path="/*" decorator="/WEB-INF/jsp/layout/_layout.jsp" />
 	<mapping path="/*Partial_*" exclue="true"/>
+	<mapping path="/Login*" exclue="true"></mapping>
 </sitemesh>

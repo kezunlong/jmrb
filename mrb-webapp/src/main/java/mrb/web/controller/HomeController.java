@@ -9,7 +9,7 @@ public class HomeController {
 
 	@RequestMapping("/")
 	public String Index(Model model) {
-		return "forward:/User/Index";
+		return "redirect:/Login";
 	}
 	
 	

@@ -35,7 +35,19 @@ public class UserService extends BaseService {
 	public User findById(int id) {
 		User item = repository.getUserRepository().findById(id);
 		
-		FillUserProperties(item);
+		if(item != null) {
+			FillUserProperties(item);
+		}
+		
+		return item;
+	}
+	
+	public User findByUserName(String userName) {
+		User item = repository.getUserRepository().findByUserName(userName);
+		
+		if(item != null) {
+			FillUserProperties(item);
+		}
 		
 		return item;
 	}

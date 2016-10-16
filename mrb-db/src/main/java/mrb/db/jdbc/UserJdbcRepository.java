@@ -6,6 +6,8 @@ import java.util.List;
 
 import org.apache.commons.logging.Log;
 import org.apache.commons.logging.LogFactory;
+import org.springframework.dao.EmptyResultDataAccessException;
+import org.springframework.dao.IncorrectResultSizeDataAccessException;
 import org.springframework.jdbc.core.RowMapper;
 
 import ir.utilities.db.PagingOption;
@@ -44,6 +46,15 @@ public class UserJdbcRepository extends JdbcBaseRepository implements UserReposi
 	public User findById(int id) {
 		String sql = SELECT_USER + " WHERE ID = ?";
 		return jdbcTemplate.queryForObject(sql, new UserRowMapper(), id);
+	}
+	
+	public User findByUserName(String userName) {
+		String sql = SELECT_USER + " WHERE UserName = ?";
+		try {
+			return jdbcTemplate.queryForObject(sql, new UserRowMapper(), userName);
+		} catch (IncorrectResultSizeDataAccessException e) {
+			return null;
+		}
 	}
 
 	public void insert(User item) {
